@@ -1,7 +1,12 @@
 .app {
   min-height: 100vh;
+  min-width: 100vw;
   padding: 40px;
   transition: background-color 0.3s, color 0.3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
 }
 
 .app.light {
