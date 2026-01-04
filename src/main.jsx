@@ -1,10 +1,19 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { TodoProvider } from './contexts/TodoContext';
+import { FilterProvider } from './contexts/FilterContext';
+import { ThemeProvider } from './contexts/ThemeContext';
+import App from './App';
+import './index.css';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
+    <ThemeProvider>
+      <FilterProvider>
+        <TodoProvider>
+          <App />
+        </TodoProvider>
+      </FilterProvider>
+    </ThemeProvider>
+  </StrictMode>
+);
